@@ -1,0 +1,12 @@
+from pydub import AudioSegment
+
+# Cargar la canción original
+original_audio = AudioSegment.from_file("/Users/lucaspinera/Desktop/ditella_sexto_semestre/AI/segunda_parte_redes/tps/tp4_td6/musica_nueva_5sec/pop.wav")
+
+# Establecer la nueva tasa de muestreo (22050 Hz)
+new_sample_rate = 22050
+original_audio = original_audio.set_frame_rate(new_sample_rate)
+
+# Exportar la canción con la nueva tasa de muestreo a una ruta específica
+export_path = "/Users/lucaspinera/Desktop/ditella_sexto_semestre/AI/segunda_parte_redes/tps/tp4_td6/pop_con_nueva_tasa.wav"
+original_audio.export(export_path, format="wav")
